@@ -18,6 +18,9 @@ readerScreen.navigationOptions = () => {
             backgroundColor: '#f5a142',
         },
         headerTintColor: '#ffff',
+        headerTitleStyle: {
+            fontSize: 30,
+        },
     }
 };
 

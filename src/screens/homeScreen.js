@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     TextStyle: {
-        fontSize: 40,
+        fontSize: 100,
         color: '#ffff',
     },
     ButtonContainer: {

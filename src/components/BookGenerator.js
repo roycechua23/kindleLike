@@ -47,7 +47,6 @@ const BookGenerator = ({ book }) => {
 
 const styles = StyleSheet.create({
     viewPager: {
-        width: 400,
         flex: 1,
     },
     viewStyle: {
@@ -55,10 +54,11 @@ const styles = StyleSheet.create({
     },
     textContent: {
         fontFamily: 'sans-serif',
-        fontSize: 18,
+        fontSize: 40,
         textAlign: 'justify',
     },
     pageNumberStyle: {
+        fontSize: 20,
         color: 'gray',
         alignSelf:'flex-end',
     }
