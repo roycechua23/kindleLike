@@ -3,10 +3,10 @@ import { StyleSheet } from 'react-native';
 import BookGenerator from '../components/BookGenerator';
 
 const readerScreen = ({ navigation }) => {
-    const story = navigation.getParam('story');
+    const file = navigation.getParam('file');
 
     return (
-        <BookGenerator book={story} />
+        <BookGenerator book={file} />
     );
 };
 
