@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import FileReader from '../components/FileReader';
 
-const HomeScreen = ({ navigation }) => {
+const homeScreen = ({ navigation }) => {
     return (
         <View style={styles.BackgroundStyle}>
             <View style={styles.Container}>
@@ -18,7 +18,7 @@ const HomeScreen = ({ navigation }) => {
     );
 };
 
-HomeScreen.navigationOptions = () => {
+homeScreen.navigationOptions = () => {
     return {
         headerShown: false,
     }
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default HomeScreen;
+export default homeScreen;

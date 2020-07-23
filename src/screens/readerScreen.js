@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import BookGenerator from '../components/BookGenerator';
 
-const ReaderScreen = ({ navigation }) => {
+const readerScreen = ({ navigation }) => {
     const file = navigation.getParam('file');
 
     return (
@@ -12,7 +12,7 @@ const ReaderScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({});
 
-ReaderScreen.navigationOptions = () => {
+readerScreen.navigationOptions = () => {
     return {
         headerStyle: {
             backgroundColor: '#f5a142',
@@ -21,4 +21,4 @@ ReaderScreen.navigationOptions = () => {
     }
 };
 
-export default ReaderScreen;
+export default readerScreen;
