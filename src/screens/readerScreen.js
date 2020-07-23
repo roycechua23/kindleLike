@@ -12,4 +12,13 @@ const ReaderScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({});
 
+ReaderScreen.navigationOptions = () => {
+    return {
+        headerStyle: {
+            backgroundColor: '#f5a142',
+        },
+        headerTintColor: '#ffff',
+    }
+};
+
 export default ReaderScreen;
