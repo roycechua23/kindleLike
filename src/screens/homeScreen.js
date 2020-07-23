@@ -13,4 +13,4 @@ const homeScreen = () => {
 
 const styles = StyleSheet.create({});
 
-export default readerScreen;
+export default homeScreen;
