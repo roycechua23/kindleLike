@@ -2,12 +2,12 @@ import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
-import homeScreen from './src/screens/homeScreen';
-import readerScreen from './src/screens/readerScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import ReaderScreen from './src/screens/ReaderScreen';
 
 const navigator = createStackNavigator({
-  Home: homeScreen,
-  Reader: readerScreen,
+  Home: HomeScreen,
+  Reader: ReaderScreen,
 }, {
   initialRouteName: 'Home',
   defaultNavigationOptions: {
