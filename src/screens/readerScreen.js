@@ -6,7 +6,7 @@ const readerScreen = () => {
         <View>
             <Text>Reader Screen</Text>
             {/* TODO#1: Render the text/book content here. */}
-            <Text>Display books here!</Text>
+            <Text>Display book content here!</Text>
         </View>
     );
 };

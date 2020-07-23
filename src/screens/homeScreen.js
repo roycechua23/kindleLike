@@ -6,7 +6,7 @@ const homeScreen = () => {
         <View>
             <Text>Home Screen</Text>
             {/* TODO#2: Render the text/book content here. */}
-            <Text>Render Book Files here</Text>
+            <Text>Display Book Files here</Text>
         </View>
     );
 };
