@@ -5,7 +5,7 @@ import * as FileSystem from 'expo-file-system';
 
 const FileReader = ({title, onFileSubmit}) => {
     const readBookFile = () => {
-        DocumentPicker.getDocumentAsync().then(
+        DocumentPicker.getDocumentAsync({ type: 'text/plain' }).then(
             (file) => {
                 FileSystem.readAsStringAsync(file.uri).then(
                     (strVal) => onFileSubmit(strVal)
