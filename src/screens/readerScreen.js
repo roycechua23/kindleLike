@@ -7,19 +7,18 @@ const NUM_OF_LINES = 25;
 // Characters per line
 // CPL = Width / (font-size/font-constant)
 // 1.91 - Arial/Sans-serif font-constant
-const CPL = 320 / (20/1.91);
+const CPL = 300 / (18/1.91);
 const storyPartsLength = Math.round(story.length/CPL*NUM_OF_LINES);
 const storyPartsList = [];
 
 const readerScreen = () => {
     let storyPart = story;
     for(let i=1; i <= storyPartsLength; i++) {
-        if(storyPart.slice(0,CPL*NUM_OF_LINES) === ""){
-            
-        } else {
+        if(storyPart.slice(0,CPL*NUM_OF_LINES) != "") {
             storyPartsList.push(
                 <View style={styles.viewStyle} key={i}>
                     <Text style={styles.textContent}>{storyPart.slice(0,CPL*NUM_OF_LINES)}</Text>
+                    <Text style={{color: 'gray',alignSelf:'flex-end'}}>Page {i}</Text>
                 </View>
             );
             storyPart = storyPart.slice(CPL*NUM_OF_LINES);
@@ -59,7 +58,7 @@ const styles = StyleSheet.create({
     },
     textContent: {
         fontFamily: 'sans-serif',
-        fontSize: 20,
+        fontSize: 18,
         textAlign: 'justify',
     }
 });
