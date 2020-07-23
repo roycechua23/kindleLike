@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
-import * as DocumentPicker from 'expo-document-picker';
-import * as FileSystem from 'expo-file-system';
+import FileReader from '../components/FileReader';
 
 const homeScreen = ({ navigation }) => {
     return (
@@ -10,17 +9,10 @@ const homeScreen = ({ navigation }) => {
                 <Text style={styles.TextStyle}>KindleLike</Text>
             </View>
             <View style={styles.ButtonContainer}>
-                <TouchableOpacity onPress={() => {
-                    DocumentPicker.getDocumentAsync().then(
-                        (file) => {
-                            FileSystem.readAsStringAsync(file.uri).then(
-                                (strVal) => navigation.navigate('Reader', { story: strVal })
-                            );
-                        }
-                    );
-                }}>
-                    <Text style={styles.ButtonTextStyle}>Select Book File</Text>
-                </TouchableOpacity>
+                <FileReader 
+                    title={'Select Book File'} 
+                    onFileSubmit={(value) => navigation.navigate('Reader', { file: value })} 
+                />
             </View>
         </View>
     );
@@ -39,13 +31,6 @@ const styles = StyleSheet.create({
     TextStyle: {
         fontSize: 40,
         color: '#ffff',
-    },
-    ButtonTextStyle: {
-        fontSize: 30,
-        color: '#ffff',
-        backgroundColor: '#f5a142',
-        borderRadius: 15,
-        padding: 15,
     },
     ButtonContainer: {
         margin: 10,
