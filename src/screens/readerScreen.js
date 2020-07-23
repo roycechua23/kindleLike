@@ -7,7 +7,7 @@ const NUM_OF_LINES = 25;
 // Characters per line
 // CPL = Width / (font-size/font-constant)
 // 1.91 - Arial/Sans-serif font-constant
-const CPL = 300 / (18/1.91);
+const CPL = 300 / (18/1.9);
 const storyPartsLength = Math.round(story.length/CPL*NUM_OF_LINES);
 const storyPartsList = [];
 
@@ -24,10 +24,10 @@ const readerScreen = () => {
             storyPart = storyPart.slice(CPL*NUM_OF_LINES);
         }
     }
-    console.log(`CPL is ${Math.round(CPL)}`);
-    console.log(`Text Length - ${story.length}`);
-    console.log(storyPartsList);
-    console.log(storyPartsList.length);
+    // console.log(`CPL is ${Math.round(CPL)}`);
+    // console.log(`Text Length - ${story.length}`);
+    // console.log(storyPartsList);
+    // console.log(storyPartsList.length);
 
     return (
         <ViewPager style={styles.viewPager} initialPage={0}>
