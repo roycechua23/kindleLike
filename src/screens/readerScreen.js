@@ -1,17 +1,19 @@
 import React, { useCallback, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ViewPager from '@react-native-community/viewpager';
-import { story } from '../constants/constants';
+// import { story } from '../constants/constants';
 
-const NUM_OF_LINES = 25;
-// Characters per line
-// CPL = Width / (font-size/font-constant)
-// 1.91 - Arial/Sans-serif font-constant
-const CPL = 300 / (18/1.9);
-const storyPartsLength = Math.round(story.length/CPL*NUM_OF_LINES);
-const storyPartsList = [];
+const readerScreen = ({ navigation }) => {
+    const story = navigation.getParam('story');
 
-const readerScreen = () => {
+    const NUM_OF_LINES = 25;
+    // Characters per line
+    // CPL = Width / (font-size/font-constant)
+    // 1.91 - Arial/Sans-serif font-constant
+    const CPL = 300 / (18/1.9);
+    const storyPartsLength = Math.round(story.length/CPL*NUM_OF_LINES);
+    const storyPartsList = [];
+   
     let storyPart = story;
     for(let i=1; i <= storyPartsLength; i++) {
         if(storyPart.slice(0,CPL*NUM_OF_LINES) != "") {
