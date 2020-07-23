@@ -18,6 +18,12 @@ const HomeScreen = ({ navigation }) => {
     );
 };
 
+HomeScreen.navigationOptions = () => {
+    return {
+        headerShown: false,
+    }
+};
+
 const styles = StyleSheet.create({
     BackgroundStyle: {
         backgroundColor: '#222222',
