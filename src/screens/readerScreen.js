@@ -1,7 +1,5 @@
-import React, { useCallback, useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import ViewPager from '@react-native-community/viewpager';
-// import { story } from '../constants/constants';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import BookGenerator from '../components/BookGenerator';
 
 const readerScreen = ({ navigation }) => {
