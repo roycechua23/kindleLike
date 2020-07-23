@@ -11,9 +11,12 @@ const homeScreen = () => {
             <Text>Display Book Files here</Text>
             <Button title={"Select File Here"} onPress={()=>{
                 DocumentPicker.getDocumentAsync().then(
-                    (file) => console.log(file.uri)
+                    (file) => {
+                        FileSystem.readAsStringAsync(file.uri).then(
+                            (strVal) => console.log(strVal)
+                        );
+                    }
                 );
-                
             }}/>
         </View>
     );
