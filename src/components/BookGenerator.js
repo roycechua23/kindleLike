@@ -3,16 +3,22 @@ import { View, Text, StyleSheet } from 'react-native';
 import ViewPager from '@react-native-community/viewpager';
 
 const BookGenerator = ({ book }) => {
+
+    /*  
+        NUM_OF_LINES - Number of lines in a Text Component on Screen
+        CPL - Characters per line
+            Formula: CPL = Width / (font-size/font-constant)
+        bookPartsLength - computes how many Views will be generated        
+    */
     const NUM_OF_LINES = 25;
-    // Characters per line
-    // CPL = Width / (font-size/font-constant)
-    // 1.91 - Arial/Sans-serif font-constant
-    const CPL = 300 / (18/1.9);
-    const storyPartsLength = Math.round(book.length/CPL*NUM_OF_LINES);
-    const storyPartsList = [];
-   
+    const CPL = 300 / (18/1.9); // 1.91 - Arial/Sans-serif font-constant
+    const bookPartsLength = Math.round(book.length/CPL*NUM_OF_LINES);
+    
+    // All the Views will be stored in bookParts List
+    const bookPartsList = [];
+    
     let bookPart = book;
-    for(let i=1; i <= storyPartsLength; i++) {
+    for(let i=1; i <= bookPartsLength; i++) {
         if(bookPart.slice(0,CPL*NUM_OF_LINES) != "") {
             storyPartsList.push(
                 <View style={styles.viewStyle} key={i}>
