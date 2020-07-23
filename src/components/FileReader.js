@@ -9,9 +9,9 @@ const FileReader = ({title, onFileSubmit}) => {
             (file) => {
                 FileSystem.readAsStringAsync(file.uri).then(
                     (strVal) => onFileSubmit(strVal)
-                );
+                ).catch(error => file="");
             }
-        );
+        ).catch(error => alert(`An error was encountered with ${error.message}`));
     }
 
     return (
