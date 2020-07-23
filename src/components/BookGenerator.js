@@ -28,7 +28,7 @@ const BookGenerator = ({ book }) => {
                 bookPartsList.push(
                     <View style={styles.viewStyle} key={i}>
                         <Text style={styles.textContent}>{bookPart.slice(0,CPL*NUM_OF_LINES)}</Text>
-                        <Text style={{color: 'gray',alignSelf:'flex-end'}}>Page {i}</Text>
+                        <Text style={styles.pageNumberStyle}>Page {i}</Text>
                     </View>
                 );
                 // Continue from the sliced bookPart
@@ -57,6 +57,10 @@ const styles = StyleSheet.create({
         fontFamily: 'sans-serif',
         fontSize: 18,
         textAlign: 'justify',
+    },
+    pageNumberStyle: {
+        color: 'gray',
+        alignSelf:'flex-end',
     }
 });    
 
