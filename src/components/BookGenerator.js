@@ -5,6 +5,8 @@ import ViewPager from '@react-native-community/viewpager';
 const BookGenerator = ({ book }) => {
 
     /*  
+        Constant Values 
+        
         NUM_OF_LINES - Number of lines in a Text Component on Screen
         CPL - Characters per line
             Formula: CPL = Width / (font-size/font-constant)
@@ -18,7 +20,9 @@ const BookGenerator = ({ book }) => {
         // All the Views will be stored in bookParts List
         const bookPartsList = [];
 
+        // Assign a temporary value bookPart that will hold the book value
         let bookPart = book;
+        // Slice bookPart by the Characters Per Line (CPL) and Number of Lines per Screen/View
         for(let i=1; i <= bookPartsLength; i++) {
             if(bookPart.slice(0,CPL*NUM_OF_LINES) != "") {
                 bookPartsList.push(
@@ -27,6 +31,7 @@ const BookGenerator = ({ book }) => {
                         <Text style={{color: 'gray',alignSelf:'flex-end'}}>Page {i}</Text>
                     </View>
                 );
+                // Continue from the sliced bookPart
                 bookPart = bookPart.slice(CPL*NUM_OF_LINES);
             }
         }
