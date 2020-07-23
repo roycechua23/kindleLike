@@ -9,7 +9,7 @@ const navigator = createStackNavigator({
   Home: homeScreen,
   Reader: readerScreen,
 }, {
-  initialRouteName: 'Reader',
+  initialRouteName: 'Home',
   defaultNavigationOptions: {
     title: 'KindleLike',
   }
