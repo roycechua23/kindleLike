@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
 import * as FileSystem from 'expo-file-system';
 
-const homeScreen = () => {
+const homeScreen = ({ navigation }) => {
     return (
         <View style={styles.BackgroundStyle}>
             <View style={styles.Container}>
@@ -14,7 +14,7 @@ const homeScreen = () => {
                     DocumentPicker.getDocumentAsync().then(
                         (file) => {
                             FileSystem.readAsStringAsync(file.uri).then(
-                                (strVal) => console.log(strVal)
+                                (strVal) => navigation.navigate('Reader', { story: strVal })
                             );
                         }
                     );
